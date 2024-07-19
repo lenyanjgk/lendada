@@ -11,7 +11,6 @@ import java.util.List;
  * 编辑用户答案请求
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
- * @from <a href="https://www.code-nav.cn">编程导航学习圈</a>
  */
 @Data
 public class UserAnswerEditRequest implements Serializable {

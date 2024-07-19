@@ -2,27 +2,27 @@ package com.lenyan.lendada.controller;
 
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.lenyan.lendada.annotation.AuthCheck;
-import com.lenyan.lendada.common.BaseResponse;
-import com.lenyan.lendada.common.DeleteRequest;
-import com.lenyan.lendada.common.ErrorCode;
-import com.lenyan.lendada.common.ResultUtils;
-import com.lenyan.lendada.constant.UserConstant;
-import com.lenyan.lendada.exception.BusinessException;
-import com.lenyan.lendada.exception.ThrowUtils;
-import com.lenyan.lendada.model.dto.userAnswer.UserAnswerAddRequest;
-import com.lenyan.lendada.model.dto.userAnswer.UserAnswerEditRequest;
-import com.lenyan.lendada.model.dto.userAnswer.UserAnswerQueryRequest;
-import com.lenyan.lendada.model.dto.userAnswer.UserAnswerUpdateRequest;
-import com.lenyan.lendada.model.entity.App;
-import com.lenyan.lendada.model.entity.User;
-import com.lenyan.lendada.model.entity.UserAnswer;
-import com.lenyan.lendada.model.enums.ReviewStatusEnum;
-import com.lenyan.lendada.model.vo.UserAnswerVO;
-import com.lenyan.lendada.scoring.ScoringStrategyExecutor;
-import com.lenyan.lendada.service.AppService;
-import com.lenyan.lendada.service.UserAnswerService;
-import com.lenyan.lendada.service.UserService;
+import com. lenyan. lendada.annotation.AuthCheck;
+import com. lenyan. lendada.common.BaseResponse;
+import com. lenyan. lendada.common.DeleteRequest;
+import com. lenyan. lendada.common.ErrorCode;
+import com. lenyan. lendada.common.ResultUtils;
+import com. lenyan. lendada.constant.UserConstant;
+import com. lenyan. lendada.exception.BusinessException;
+import com. lenyan. lendada.exception.ThrowUtils;
+import com. lenyan. lendada.model.dto.userAnswer.UserAnswerAddRequest;
+import com. lenyan. lendada.model.dto.userAnswer.UserAnswerEditRequest;
+import com. lenyan. lendada.model.dto.userAnswer.UserAnswerQueryRequest;
+import com. lenyan. lendada.model.dto.userAnswer.UserAnswerUpdateRequest;
+import com. lenyan. lendada.model.entity.App;
+import com. lenyan. lendada.model.entity.User;
+import com. lenyan. lendada.model.entity.UserAnswer;
+import com. lenyan. lendada.model.enums.ReviewStatusEnum;
+import com. lenyan. lendada.model.vo.UserAnswerVO;
+import com. lenyan. lendada.scoring.ScoringStrategyExecutor;
+import com. lenyan. lendada.service.AppService;
+import com. lenyan. lendada.service.UserAnswerService;
+import com. lenyan. lendada.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
@@ -35,7 +35,6 @@ import java.util.List;
  * 用户答案接口
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
- * @from <a href="https://www.code-nav.cn">编程导航学习圈</a>
  */
 @RestController
 @RequestMapping("/userAnswer")
@@ -92,6 +91,7 @@ public class UserAnswerController {
         try {
             UserAnswer userAnswerWithResult = scoringStrategyExecutor.doScore(choices, app);
             userAnswerWithResult.setId(newUserAnswerId);
+            userAnswerWithResult.setAppId(null);
             userAnswerService.updateById(userAnswerWithResult);
         } catch (Exception e) {
             e.printStackTrace();

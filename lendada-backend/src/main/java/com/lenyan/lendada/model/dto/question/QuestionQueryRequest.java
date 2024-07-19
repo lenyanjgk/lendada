@@ -14,7 +14,6 @@ import java.util.List;
  * 查询题目请求
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
- * @from <a href="https://www.code-nav.cn">编程导航学习圈</a>
  */
 @EqualsAndHashCode(callSuper = true)
 @Data

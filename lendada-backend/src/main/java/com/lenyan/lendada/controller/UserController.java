@@ -1,19 +1,19 @@
 package com.lenyan.lendada.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.lenyan.lendada.annotation.AuthCheck;
-import com.lenyan.lendada.common.BaseResponse;
-import com.lenyan.lendada.common.DeleteRequest;
-import com.lenyan.lendada.common.ErrorCode;
-import com.lenyan.lendada.common.ResultUtils;
-import com.lenyan.lendada.constant.UserConstant;
-import com.lenyan.lendada.exception.BusinessException;
-import com.lenyan.lendada.exception.ThrowUtils;
-import com.lenyan.lendada.model.dto.user.*;
-import com.lenyan.lendada.model.entity.User;
-import com.lenyan.lendada.model.vo.LoginUserVO;
-import com.lenyan.lendada.model.vo.UserVO;
-import com.lenyan.lendada.service.UserService;
+import com. lenyan. lendada.annotation.AuthCheck;
+import com. lenyan. lendada.common.BaseResponse;
+import com. lenyan. lendada.common.DeleteRequest;
+import com. lenyan. lendada.common.ErrorCode;
+import com. lenyan. lendada.common.ResultUtils;
+import com. lenyan. lendada.constant.UserConstant;
+import com. lenyan. lendada.exception.BusinessException;
+import com. lenyan. lendada.exception.ThrowUtils;
+import com. lenyan. lendada.model.dto.user.*;
+import com. lenyan. lendada.model.entity.User;
+import com. lenyan. lendada.model.vo.LoginUserVO;
+import com. lenyan. lendada.model.vo.UserVO;
+import com. lenyan. lendada.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
@@ -24,13 +24,13 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-import static com.lenyan.lendada.service.impl.UserServiceImpl.SALT;
+import static com. lenyan. lendada.service.impl.UserServiceImpl.SALT;
 
 /**
  * 用户接口
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
- *  
+ * @from <a href="https:// lenyan.icu">编程导航知识星球</a>
  */
 @RestController
 @RequestMapping("/user")

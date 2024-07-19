@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
  * 应用服务
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
- * @from <a href="https://www.code-nav.cn">编程导航学习圈</a>
  */
 public interface AppService extends IService<App> {
 

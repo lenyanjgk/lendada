@@ -1,21 +1,21 @@
 package com.lenyan.lendada.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.lenyan.lendada.annotation.AuthCheck;
-import com.lenyan.lendada.common.*;
-import com.lenyan.lendada.constant.UserConstant;
-import com.lenyan.lendada.exception.BusinessException;
-import com.lenyan.lendada.exception.ThrowUtils;
-import com.lenyan.lendada.model.dto.app.AppAddRequest;
-import com.lenyan.lendada.model.dto.app.AppEditRequest;
-import com.lenyan.lendada.model.dto.app.AppQueryRequest;
-import com.lenyan.lendada.model.dto.app.AppUpdateRequest;
-import com.lenyan.lendada.model.entity.App;
-import com.lenyan.lendada.model.entity.User;
-import com.lenyan.lendada.model.enums.ReviewStatusEnum;
-import com.lenyan.lendada.model.vo.AppVO;
-import com.lenyan.lendada.service.AppService;
-import com.lenyan.lendada.service.UserService;
+import com. lenyan. lendada.annotation.AuthCheck;
+import com. lenyan. lendada.common.*;
+import com. lenyan. lendada.constant.UserConstant;
+import com. lenyan. lendada.exception.BusinessException;
+import com. lenyan. lendada.exception.ThrowUtils;
+import com. lenyan. lendada.model.dto.app.AppAddRequest;
+import com. lenyan. lendada.model.dto.app.AppEditRequest;
+import com. lenyan. lendada.model.dto.app.AppQueryRequest;
+import com. lenyan. lendada.model.dto.app.AppUpdateRequest;
+import com. lenyan. lendada.model.entity.App;
+import com. lenyan. lendada.model.entity.User;
+import com. lenyan. lendada.model.enums.ReviewStatusEnum;
+import com. lenyan. lendada.model.vo.AppVO;
+import com. lenyan. lendada.service.AppService;
+import com. lenyan. lendada.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +28,6 @@ import java.util.Date;
  * 应用接口
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
- * @from <a href="https://www.code-nav.cn">编程导航学习圈</a>
  */
 @RestController
 @RequestMapping("/app")

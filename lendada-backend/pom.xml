@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- @author <a href="https://github.com/lenyanjgk">程序员冷颜</a> -->
-<!-- @from <a href="https://blog.csdn.net/jgk666666">冷颜学习</a> -->
+<!-- @from <a href="https:// lenyan.icu">编程导航知识星球</a> -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -14,7 +14,7 @@
     <groupId>com.lenyan</groupId>
     <artifactId>lendada-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>lendada-backend</name>
+    <name> lendada-backend</name>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -62,6 +62,12 @@
             <groupId>com.qcloud</groupId>
             <artifactId>cos_api</artifactId>
             <version>5.6.89</version>
+        </dependency>
+        <!-- https://open.bigmodel.cn/dev/api#sdk_install -->
+        <dependency>
+            <groupId>cn.bigmodel.openapi</groupId>
+            <artifactId>oapi-java-sdk</artifactId>
+            <version>release-V4-2.0.2</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
         <dependency>

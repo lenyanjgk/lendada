@@ -10,7 +10,6 @@ import java.util.stream.Collectors;
  * App 评分策略枚举
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
- * @from <a href="https://www.code-nav.cn">编程导航学习圈</a>
  */
 public enum AppScoringStrategyEnum {
 

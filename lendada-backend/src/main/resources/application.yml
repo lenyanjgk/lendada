@@ -58,10 +58,10 @@ mybatis-plus:
 # todo 需替换配置
 cos:
   client:
-    accessKey: xxx
-    secretKey: xxx
-    region: xxx
-    bucket: xxx
+    accessKey: x
+    secretKey: x
+    region: ap-x
+    bucket: x-x
 # 接口文档配置
 knife4j:
   enable: true
@@ -73,3 +73,6 @@ knife4j:
         api-rule: package
         api-rule-resources:
           - com.lenyan.lendada.controller
+# AI 配置
+ai:
+  apiKey:
