@@ -1,0 +1,40 @@
+{
+    "miniprogramRoot": "dist/",
+    "projectname": "mbti-test-mini",
+    "description": "",
+    "appid": "wx5ed9d371e955c4b5",
+    "setting": {
+        "urlCheck": true,
+        "es6": false,
+        "enhance": false,
+        "compileHotReLoad": false,
+        "postcss": false,
+        "preloadBackgroundData": false,
+        "minified": false,
+        "newFeature": true,
+        "autoAudits": false,
+        "coverView": true,
+        "showShadowRootInWxmlPanel": false,
+        "scopeDataCheck": false,
+        "useCompilerModule": false,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        }
+    },
+    "compileType": "miniprogram",
+    "simulatorType": "wechat",
+    "simulatorPluginLibVersion": {},
+    "condition": {},
+    "libVersion": "3.5.0",
+    "srcMiniprogramRoot": "dist/",
+    "packOptions": {
+        "ignore": [],
+        "include": []
+    },
+    "editorSetting": {
+        "tabIndent": "insertSpaces",
+        "tabSize": 4
+    }
+}
