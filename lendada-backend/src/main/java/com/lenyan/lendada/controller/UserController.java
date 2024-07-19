@@ -30,6 +30,7 @@ import static com.lenyan.lendada.service.impl.UserServiceImpl.SALT;
  * 用户接口
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
+ *  
  */
 @RestController
 @RequestMapping("/user")

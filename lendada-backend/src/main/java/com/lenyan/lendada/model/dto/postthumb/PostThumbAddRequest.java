@@ -7,6 +7,7 @@ import lombok.Data;
  * 帖子点赞请求
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
+ *  
  */
 @Data
 public class PostThumbAddRequest implements Serializable {

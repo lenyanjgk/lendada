@@ -9,10 +9,13 @@ import org.apache.commons.lang3.ObjectUtils;
  * 文件上传业务类型枚举
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
+ *  
  */
 public enum FileUploadBizEnum {
 
-    USER_AVATAR("用户头像", "user_avatar");
+    USER_AVATAR("用户头像", "user_avatar"),
+    APP_ICON("应用图标", "app_icon"),
+    SCORING_RESULT_PICTURE("评分结果图片", "scoring_result_picture");
 
     private final String text;
 

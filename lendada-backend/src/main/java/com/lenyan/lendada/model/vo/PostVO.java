@@ -12,6 +12,7 @@ import org.springframework.beans.BeanUtils;
  * 帖子视图
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
+ *  
  */
 @Data
 public class PostVO implements Serializable {

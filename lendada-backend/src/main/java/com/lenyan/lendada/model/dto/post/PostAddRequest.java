@@ -8,6 +8,7 @@ import lombok.Data;
  * 创建请求
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
+ *  
  */
 @Data
 public class PostAddRequest implements Serializable {

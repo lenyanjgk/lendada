@@ -6,12 +6,14 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.lenyan.lendada.model.dto.post.PostQueryRequest;
 import com.lenyan.lendada.model.entity.Post;
 import com.lenyan.lendada.model.vo.PostVO;
+
 import javax.servlet.http.HttpServletRequest;
 
 /**
  * 帖子服务
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
+ *  
  */
 public interface PostService extends IService<Post> {
 

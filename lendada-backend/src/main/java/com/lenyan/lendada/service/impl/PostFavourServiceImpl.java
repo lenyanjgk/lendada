@@ -13,15 +13,17 @@ import com.lenyan.lendada.model.entity.PostFavour;
 import com.lenyan.lendada.model.entity.User;
 import com.lenyan.lendada.service.PostFavourService;
 import com.lenyan.lendada.service.PostService;
-import javax.annotation.Resource;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.Resource;
 
 /**
  * 帖子收藏服务实现
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
+ *  
  */
 @Service
 public class PostFavourServiceImpl extends ServiceImpl<PostFavourMapper, PostFavour>

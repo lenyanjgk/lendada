@@ -1,13 +1,15 @@
 package com.lenyan.lendada.common;
 
-import java.io.Serializable;
 import lombok.Data;
+
+import java.io.Serializable;
 
 /**
  * 通用返回类
  *
  * @param <T>
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
+ *  
  */
 @Data
 public class BaseResponse<T> implements Serializable {

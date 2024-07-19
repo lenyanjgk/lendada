@@ -4,6 +4,7 @@ package com.lenyan.lendada.constant;
  * 用户常量
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
+ *  
  */
 public interface UserConstant {
 

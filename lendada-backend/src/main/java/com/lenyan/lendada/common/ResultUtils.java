@@ -4,6 +4,7 @@ package com.lenyan.lendada.common;
  * 返回工具类
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
+ *  
  */
 public class ResultUtils {
 

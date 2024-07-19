@@ -12,6 +12,7 @@ import com.lenyan.lendada.model.entity.User;
  * 帖子收藏服务
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
+ *  
  */
 public interface PostFavourService extends IService<PostFavour> {
 

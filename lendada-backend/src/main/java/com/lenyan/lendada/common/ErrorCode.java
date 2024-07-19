@@ -4,6 +4,7 @@ package com.lenyan.lendada.common;
  * 自定义错误码
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
+ *  
  */
 public enum ErrorCode {
 

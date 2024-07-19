@@ -10,6 +10,7 @@ import lombok.EqualsAndHashCode;
  * 帖子收藏查询请求
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
+ *  
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

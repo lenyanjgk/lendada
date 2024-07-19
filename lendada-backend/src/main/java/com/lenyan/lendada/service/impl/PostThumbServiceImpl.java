@@ -10,15 +10,17 @@ import com.lenyan.lendada.model.entity.PostThumb;
 import com.lenyan.lendada.model.entity.User;
 import com.lenyan.lendada.service.PostService;
 import com.lenyan.lendada.service.PostThumbService;
-import javax.annotation.Resource;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.Resource;
 
 /**
  * 帖子点赞服务实现
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
+ *  
  */
 @Service
 public class PostThumbServiceImpl extends ServiceImpl<PostThumbMapper, PostThumb>

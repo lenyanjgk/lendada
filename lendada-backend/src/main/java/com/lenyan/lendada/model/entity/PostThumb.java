@@ -12,6 +12,7 @@ import lombok.Data;
  * 帖子点赞
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
+ *  
  */
 @TableName(value = "post_thumb")
 @Data

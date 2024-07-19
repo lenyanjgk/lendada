@@ -1,10 +1,10 @@
 -- 切换库
-use yudada;
+use lendada;
 
 -- 用户表初始数据
 INSERT INTO user (id, userAccount, userPassword, unionId, mpOpenId, userName, userAvatar, userProfile, userRole,
                   createTime, updateTime, isDelete)
-VALUES (1, 'yupi', 'b0dd3697a192885d7c055db46155b26a', null, null, '鱼皮',
+VALUES (1, 'lenyan', 'b0dd3697a192885d7c055db46155b26a', null, null, '鱼皮',
         'https://k.sinaimg.cn/n/sinakd20110/560/w1080h1080/20230930/915d-f3d7b580c33632b191e19afa0a858d31.jpg/w700d1q75cms.jpg',
         '欢迎来编程导航学习', 'admin', '2024-05-09 11:13:13', '2024-05-09 15:07:48', 0);
 

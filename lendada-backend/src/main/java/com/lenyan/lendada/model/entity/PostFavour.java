@@ -12,6 +12,7 @@ import lombok.Data;
  * 帖子收藏
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
+ *  
  **/
 @TableName(value = "post_favour")
 @Data

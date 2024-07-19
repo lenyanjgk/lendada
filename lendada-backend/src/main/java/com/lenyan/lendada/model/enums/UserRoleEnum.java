@@ -9,6 +9,7 @@ import org.apache.commons.lang3.ObjectUtils;
  * 用户角色枚举
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
+ *  
  */
 public enum UserRoleEnum {
 

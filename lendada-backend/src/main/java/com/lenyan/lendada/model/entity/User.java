@@ -13,6 +13,7 @@ import lombok.Data;
  * 用户
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
+ *  
  */
 @TableName(value = "user")
 @Data
