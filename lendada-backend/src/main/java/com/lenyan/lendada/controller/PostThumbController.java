@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletRequest;
  * 帖子点赞接口
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
- * @from <a href="https:// lenyan.icu">编程导航知识星球</a>
+
  */
 @RestController
 @RequestMapping("/post_thumb")

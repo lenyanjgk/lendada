@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- @author <a href="https://github.com/lenyanjgk">程序员冷颜</a> -->
-<!-- @from <a href="https:// lenyan.icu">编程导航知识星球</a> -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -14,7 +13,7 @@
     <groupId>com.lenyan</groupId>
     <artifactId>lendada-backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name> lendada-backend</name>
+    <name>lendada-backend</name>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -50,6 +49,24 @@
         <dependency>
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session-data-redis</artifactId>
+        </dependency>
+        <!-- https://github.com/redisson/redisson -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.21.0</version>
+        </dependency>
+        <!-- https://github.com/ben-manes/caffeine -->
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        <!-- https://github.com/apache/shardingsphere -->
+        <dependency>
+            <groupId>org.apache.shardingsphere</groupId>
+            <artifactId>shardingsphere-jdbc-core-spring-boot-starter</artifactId>
+            <version>5.2.0</version>
         </dependency>
         <!-- https://doc.xiaominfo.com/docs/quick-start#openapi2 -->
         <dependency>
