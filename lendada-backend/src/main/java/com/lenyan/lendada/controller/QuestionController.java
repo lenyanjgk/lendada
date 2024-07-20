@@ -331,7 +331,6 @@ public class QuestionController {
         ThrowUtils.throwIf(app == null, ErrorCode.NOT_FOUND_ERROR);
         // 封装 Prompt
         String userMessage = getGenerateQuestionUserMessage(app, questionNumber, optionNumber);
-
         // 建立 SSE 连接对象，0 表示永不超时
         SseEmitter sseEmitter = new SseEmitter(0L);
         // AI 生成，SSE 流式返回
@@ -340,8 +339,6 @@ public class QuestionController {
         AtomicInteger counter = new AtomicInteger(0);
         // 拼接完整题目
         StringBuilder stringBuilder = new StringBuilder();
-
-
         modelDataFlowable
                 .observeOn(Schedulers.io())
                 .map(modelData -> modelData.getChoices().get(0).getDelta().getContent())

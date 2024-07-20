@@ -1,20 +1,20 @@
 package com.lenyan.lendada.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com. lenyan. lendada.common.BaseResponse;
-import com. lenyan. lendada.common.ErrorCode;
-import com. lenyan. lendada.common.ResultUtils;
-import com. lenyan. lendada.exception.BusinessException;
-import com. lenyan. lendada.exception.ThrowUtils;
-import com. lenyan. lendada.model.dto.post.PostQueryRequest;
-import com. lenyan. lendada.model.dto.postfavour.PostFavourAddRequest;
-import com. lenyan. lendada.model.dto.postfavour.PostFavourQueryRequest;
-import com. lenyan. lendada.model.entity.Post;
-import com. lenyan. lendada.model.entity.User;
-import com. lenyan. lendada.model.vo.PostVO;
-import com. lenyan. lendada.service.PostFavourService;
-import com. lenyan. lendada.service.PostService;
-import com. lenyan. lendada.service.UserService;
+import com.lenyan.lendada.common.BaseResponse;
+import com.lenyan.lendada.common.ErrorCode;
+import com.lenyan.lendada.common.ResultUtils;
+import com.lenyan.lendada.exception.BusinessException;
+import com.lenyan.lendada.exception.ThrowUtils;
+import com.lenyan.lendada.model.dto.post.PostQueryRequest;
+import com.lenyan.lendada.model.dto.postfavour.PostFavourAddRequest;
+import com.lenyan.lendada.model.dto.postfavour.PostFavourQueryRequest;
+import com.lenyan.lendada.model.entity.Post;
+import com.lenyan.lendada.model.entity.User;
+import com.lenyan.lendada.model.vo.PostVO;
+import com.lenyan.lendada.service.PostFavourService;
+import com.lenyan.lendada.service.PostService;
+import com.lenyan.lendada.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,7 +28,6 @@ import javax.servlet.http.HttpServletRequest;
  * 帖子收藏接口
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
-
  */
 @RestController
 @RequestMapping("/post_favour")

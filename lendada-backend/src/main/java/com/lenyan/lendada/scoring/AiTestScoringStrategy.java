@@ -26,7 +26,6 @@ import java.util.concurrent.TimeUnit;
  * AI 测评类应用评分策略
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
-
  */
 @ScoringStrategyConfig(appType = 1, scoringStrategy = 1)
 public class AiTestScoringStrategy implements ScoringStrategy {
@@ -46,7 +45,7 @@ public class AiTestScoringStrategy implements ScoringStrategy {
     /**
      * AI 评分结果本地缓存
      */
-    private final Cache<String, String>answerCacheMap =
+    private final Cache<String, String> answerCacheMap =
             Caffeine.newBuilder().initialCapacity(1024)
                     // 缓存 5 分钟移除
                     .expireAfterAccess(5L, TimeUnit.MINUTES)

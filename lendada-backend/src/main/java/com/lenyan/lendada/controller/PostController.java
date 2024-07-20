@@ -2,23 +2,23 @@ package com.lenyan.lendada.controller;
 
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com. lenyan. lendada.annotation.AuthCheck;
-import com. lenyan. lendada.common.BaseResponse;
-import com. lenyan. lendada.common.DeleteRequest;
-import com. lenyan. lendada.common.ErrorCode;
-import com. lenyan. lendada.common.ResultUtils;
-import com. lenyan. lendada.constant.UserConstant;
-import com. lenyan. lendada.exception.BusinessException;
-import com. lenyan. lendada.exception.ThrowUtils;
-import com. lenyan. lendada.model.dto.post.PostAddRequest;
-import com. lenyan. lendada.model.dto.post.PostEditRequest;
-import com. lenyan. lendada.model.dto.post.PostQueryRequest;
-import com. lenyan. lendada.model.dto.post.PostUpdateRequest;
-import com. lenyan. lendada.model.entity.Post;
-import com. lenyan. lendada.model.entity.User;
-import com. lenyan. lendada.model.vo.PostVO;
-import com. lenyan. lendada.service.PostService;
-import com. lenyan. lendada.service.UserService;
+import com.lenyan.lendada.annotation.AuthCheck;
+import com.lenyan.lendada.common.BaseResponse;
+import com.lenyan.lendada.common.DeleteRequest;
+import com.lenyan.lendada.common.ErrorCode;
+import com.lenyan.lendada.common.ResultUtils;
+import com.lenyan.lendada.constant.UserConstant;
+import com.lenyan.lendada.exception.BusinessException;
+import com.lenyan.lendada.exception.ThrowUtils;
+import com.lenyan.lendada.model.dto.post.PostAddRequest;
+import com.lenyan.lendada.model.dto.post.PostEditRequest;
+import com.lenyan.lendada.model.dto.post.PostQueryRequest;
+import com.lenyan.lendada.model.dto.post.PostUpdateRequest;
+import com.lenyan.lendada.model.entity.Post;
+import com.lenyan.lendada.model.entity.User;
+import com.lenyan.lendada.model.vo.PostVO;
+import com.lenyan.lendada.service.PostService;
+import com.lenyan.lendada.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +31,6 @@ import java.util.List;
  * 帖子接口
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
-
  */
 @RestController
 @RequestMapping("/post")

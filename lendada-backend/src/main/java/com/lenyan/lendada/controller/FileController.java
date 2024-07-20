@@ -1,16 +1,16 @@
 package com.lenyan.lendada.controller;
 
 import cn.hutool.core.io.FileUtil;
-import com. lenyan. lendada.common.BaseResponse;
-import com. lenyan. lendada.common.ErrorCode;
-import com. lenyan. lendada.common.ResultUtils;
-import com. lenyan. lendada.constant.FileConstant;
-import com. lenyan. lendada.exception.BusinessException;
-import com. lenyan. lendada.manager.CosManager;
-import com. lenyan. lendada.model.dto.file.UploadFileRequest;
-import com. lenyan. lendada.model.entity.User;
-import com. lenyan. lendada.model.enums.FileUploadBizEnum;
-import com. lenyan. lendada.service.UserService;
+import com.lenyan.lendada.common.BaseResponse;
+import com.lenyan.lendada.common.ErrorCode;
+import com.lenyan.lendada.common.ResultUtils;
+import com.lenyan.lendada.constant.FileConstant;
+import com.lenyan.lendada.exception.BusinessException;
+import com.lenyan.lendada.manager.CosManager;
+import com.lenyan.lendada.model.dto.file.UploadFileRequest;
+import com.lenyan.lendada.model.entity.User;
+import com.lenyan.lendada.model.enums.FileUploadBizEnum;
+import com.lenyan.lendada.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,7 +28,6 @@ import java.util.Arrays;
  * 文件接口
  *
  * @author <a href="https://github.com/lenyanjgk">程序员冷颜</a>
-
  */
 @RestController
 @RequestMapping("/file")
