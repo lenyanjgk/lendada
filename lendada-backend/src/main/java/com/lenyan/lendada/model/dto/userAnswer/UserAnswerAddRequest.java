@@ -1,7 +1,5 @@
 package com.lenyan.lendada.model.dto.userAnswer;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -14,6 +12,12 @@ import java.util.List;
  */
 @Data
 public class UserAnswerAddRequest implements Serializable {
+
+    /**
+     * 用户答案id
+     */
+
+    private Long id;
 
     /**
      * 应用 id

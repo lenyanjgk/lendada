@@ -28,4 +28,19 @@
         resultScore,userId,createTime,
         updateTime,isDelete
     </sql>
+
+
+<!--    <select id="getAppAnswerCount" resultType="com.lenyan.lendada.model.dto.statistic.AppAnswerCountDTO">-->
+<!--        SELECT appId, COUNT(appId) AS countAppId FROM user_answer GROUP BY appId ORDER BY countAppId DESC LIMIT 20-->
+<!--    </select>-->
+<!--    <select id="getAppAnswerResultCount"-->
+<!--            resultType="com.lenyan.lendada.model.dto.statistic.AppAnswerResultCountDTO">-->
+<!--        SELECT resultId, COUNT(resultId) AS countResultId FROM user_answer GROUP BY resultId ORDER BY countResultId DESC-->
+<!--    </select>-->
+<!--    <select id="getAppAnswerResultCountByAppId"-->
+<!--            resultType="com.lenyan.lendada.model.dto.statistic.AppAnswerResultCountDTO">-->
+<!--        SELECT resultId, COUNT(resultId) AS countResultId FROM user_answer WHERE appId = #{appId} GROUP BY resultId-->
+<!--    </select>-->
+
+
 </mapper>
