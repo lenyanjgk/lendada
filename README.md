@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/d66c47b3-c408-4dc1-b0ca-68eaf24a5f92)# lendada - 智慧答 AI答题应用平台
+# lendada - 智慧答 AI答题应用平台
 
 🚀 **项目简介**
 
@@ -15,21 +15,43 @@
 - **丰富功能**：支持用户自定义创建答题应用、智能生成题目与评分、实时数据分析与应用分享等功能。
 - **深度优化**：涵盖性能优化、系统安全、数据库分片、幂等设计等多个层面，全面提升应用的健壮性和用户体验。
 
-[](https://imgos.cn/2024/08/13/66bb76295dd1d.jpg)
 
-[](https://imgos.cn/2024/08/13/66bb76294f960.jpg)
 
-[](https://imgos.cn/2024/08/13/66bb762b7c12c.jpg)
+## 网页展示：
 
-[](https://imgos.cn/2024/08/13/66bb762945959.jpg)
+#### 应用主页：
 
-[](https://imgos.cn/2024/08/13/66bb762960f85.jpg)
+![](https://imgos.cn/2024/08/13/66bb76295dd1d.jpg)
 
-[](https://imgos.cn/2024/08/13/66bb762957111.jpg)
+#### 应用统计
 
-[](https://imgos.cn/2024/08/13/66bb762b49f5e.jpg)
+![](https://imgos.cn/2024/08/13/66bb76294f960.jpg)
 
-[](https://imgos.cn/2024/08/13/66bb762bf3385.jpg)
+#### 回答问题测试中
+
+![](https://imgos.cn/2024/08/13/66bb762b7c12c.jpg)
+
+#### 应用详情
+
+![](https://imgos.cn/2024/08/13/66bb762945959.jpg)
+
+#### 应用管理
+
+![](https://imgos.cn/2024/08/13/66bb762960f85.jpg)
+
+#### 评分管理
+
+![](https://imgos.cn/2024/08/13/66bb762957111.jpg)
+
+#### 题目管理
+
+![](https://imgos.cn/2024/08/13/66bb762b49f5e.jpg)
+
+#### AI评分测试
+
+![](https://imgos.cn/2024/08/13/66bb762bf3385.jpg)
+
+
 
 ## 📚 学习路径概览
 
@@ -45,6 +67,8 @@
 3. **AI智能答题应用平台**：集成ChatGLM AI，探索AI在题目生成与答案分析中的应用。
 4. **多角度项目优化**：涵盖响应式编程、缓存策略、分库分表、幂等设计等，全面提升项目质量。
 
+
+
 ## 🛠 技术栈
 
 - **前端**：Vue 3, Vue CLI, Arco Design, Pinia, Axios, TypeScript, QRCode.js, OpenAPI
@@ -56,12 +80,3 @@
 - **前端技术**：Vue 3、Vue CLI、Axios、TypeScript、Arco Design、Pinia、QRCode.js等。
 - **后端技术**：Spring Boot、MySQL、Redis、MyBatis Plus、分布式锁、响应式框架等。
 - **辅助工具**：JetBrains系列IDE、Taro跨端框架、CodeGeeX智能编程助手。
-
-## 🤝 社区与支持
-
-加入项目交流群，与其他开发者共同探讨技术难题，获取更多项目扩展思路和实践心得。我们期待您的加入，一起开启智慧答题的新篇章！
-
----
-
-**注意：** 上述链接和资源请根据实际情况进行验证，确保访问有效。如有变动，请参考原项目发布者的最新公告。
-
