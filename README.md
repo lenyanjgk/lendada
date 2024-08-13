@@ -1,4 +1,4 @@
-# lendada - 智慧答 AI答题应用平台
+![image](https://github.com/user-attachments/assets/d66c47b3-c408-4dc1-b0ca-68eaf24a5f92)# lendada - 智慧答 AI答题应用平台
 
 🚀 **项目简介**
 
@@ -14,6 +14,22 @@
 - **技术前沿**：融合Vue 3的高效前端开发、Spring Boot的稳健后端服务、ChatGLM AI的智能交互能力，以及RxJava与SSE带来的实时通信体验。
 - **丰富功能**：支持用户自定义创建答题应用、智能生成题目与评分、实时数据分析与应用分享等功能。
 - **深度优化**：涵盖性能优化、系统安全、数据库分片、幂等设计等多个层面，全面提升应用的健壮性和用户体验。
+
+[](https://imgos.cn/2024/08/13/66bb76295dd1d.jpg)
+
+[](https://imgos.cn/2024/08/13/66bb76294f960.jpg)
+
+[](https://imgos.cn/2024/08/13/66bb762b7c12c.jpg)
+
+[](https://imgos.cn/2024/08/13/66bb762945959.jpg)
+
+[](https://imgos.cn/2024/08/13/66bb762960f85.jpg)
+
+[](https://imgos.cn/2024/08/13/66bb762957111.jpg)
+
+[](https://imgos.cn/2024/08/13/66bb762b49f5e.jpg)
+
+[](https://imgos.cn/2024/08/13/66bb762bf3385.jpg)
 
 ## 📚 学习路径概览
 
