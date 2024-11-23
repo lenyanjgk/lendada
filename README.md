@@ -1,4 +1,4 @@
-# lendada - 智慧答 AI答题应用平台1
+# lendada - 智慧答 AI答题应用平台
 
 🚀 **项目简介**
 
@@ -21,35 +21,35 @@
 
 #### 应用主页：
 
-![](https://imgos.cn/2024/08/13/66bb76295dd1d.jpg)
+![](https://www.helloimg.com/i/2024/11/23/6741d7a353ed0.jpg)
 
 #### 应用统计
 
-![](https://imgos.cn/2024/08/13/66bb76294f960.jpg)
+![](https://www.helloimg.com/i/2024/11/23/6741d7a2201b9.jpg)
 
 #### 回答问题测试中
 
-![](https://imgos.cn/2024/08/13/66bb762b7c12c.jpg)
+![](https://www.helloimg.com/i/2024/11/23/6741d7a25f143.jpg)
 
 #### 应用详情
 
-![](https://imgos.cn/2024/08/13/66bb762945959.jpg)
+![](https://www.helloimg.com/i/2024/11/23/6741d7a2c54a0.jpg)
 
 #### 应用管理
 
-![](https://imgos.cn/2024/08/13/66bb762960f85.jpg)
+![](https://www.helloimg.com/i/2024/11/23/6741d7a389a14.jpg)
 
 #### 评分管理
 
-![](https://imgos.cn/2024/08/13/66bb762957111.jpg)
+![](https://www.helloimg.com/i/2024/11/23/6741d7a378d9b.jpg)
 
 #### 题目管理
 
-![](https://imgos.cn/2024/08/13/66bb762b49f5e.jpg)
+![](https://www.helloimg.com/i/2024/11/23/6741d7a3d867b.jpg)
 
 #### AI评分测试
 
-![](https://imgos.cn/2024/08/13/66bb762bf3385.jpg)
+![](https://www.helloimg.com/i/2024/11/23/6741d7a36804d.jpg)
 
 
 
