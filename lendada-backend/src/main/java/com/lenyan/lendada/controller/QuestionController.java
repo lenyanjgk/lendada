@@ -3,6 +3,7 @@ package com.lenyan.lendada.controller;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.github.rholder.retry.*;
 import com.lenyan.lendada.annotation.AuthCheck;
 import com.lenyan.lendada.common.BaseResponse;
 import com.lenyan.lendada.common.DeleteRequest;
@@ -32,9 +33,16 @@ import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicInteger;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+
 
 /**
  * 题目接口
@@ -283,6 +291,8 @@ public class QuestionController {
             "3. 检查题目是否包含序号，若包含序号则去除序号\n" +
             "4. 返回的题目列表格式必须为 JSON 数组";
 
+
+
     /**
      * 生成题目的用户消息
      *
@@ -301,22 +311,58 @@ public class QuestionController {
         return userMessage.toString();
     }
 
+    private String doSyncRequestWithRetry(String systemMessage, String userMessage, Object otherParam) {
+        Retryer<String> retryer = RetryerBuilder.<String>newBuilder()
+                .retryIfException() // 出现异常时进行重试
+                .withStopStrategy(StopStrategies.stopAfterAttempt(3)) // 最大重试3次
+                .withWaitStrategy(WaitStrategies.fixedWait(2, TimeUnit.SECONDS)) // 每次重试间隔2秒
+                .build();
+        Callable<String> callable = () -> aiManager.doSyncRequest(systemMessage, userMessage, (Float) otherParam);
+        try {
+            return retryer.call(callable);
+        } catch (ExecutionException | RetryException e) {
+            log.error("多次重试后仍然调用AI平台失败（同步请求）", e);
+            throw new RuntimeException("多次重试后仍然无法成功调用AI平台，请检查网络或其他问题", e);
+        }
+    }
+
+
+
+//    @PostMapping("/ai_generate")
+//    public BaseResponse<List<QuestionContentDTO>> aiGenerateQuestion(
+//            @RequestBody AiGenerateQuestionRequest aiGenerateQuestionRequest) {
+//        ThrowUtils.throwIf(aiGenerateQuestionRequest == null, ErrorCode.PARAMS_ERROR);
+//        // 获取参数
+//        Long appId = aiGenerateQuestionRequest.getAppId();
+//        int questionNumber = aiGenerateQuestionRequest.getQuestionNumber();
+//        int optionNumber = aiGenerateQuestionRequest.getOptionNumber();
+//        // 获取应用信息
+//        App app = appService.getById(appId);
+//        ThrowUtils.throwIf(app == null, ErrorCode.NOT_FOUND_ERROR);
+//        // 封装 Prompt
+//        String userMessage = getGenerateQuestionUserMessage(app, questionNumber, optionNumber);
+//        // AI 生成
+//        String result = aiManager.doSyncRequest(GENERATE_QUESTION_SYSTEM_MESSAGE, userMessage, null);
+//        // 截取需要的 JSON 信息
+//        int start = result.indexOf("[");
+//        int end = result.lastIndexOf("]");
+//        String json = result.substring(start, end + 1);
+//        List<QuestionContentDTO> questionContentDTOList = JSONUtil.toList(json, QuestionContentDTO.class);
+//        return ResultUtils.success(questionContentDTOList);
+//    }
+
     @PostMapping("/ai_generate")
     public BaseResponse<List<QuestionContentDTO>> aiGenerateQuestion(
             @RequestBody AiGenerateQuestionRequest aiGenerateQuestionRequest) {
         ThrowUtils.throwIf(aiGenerateQuestionRequest == null, ErrorCode.PARAMS_ERROR);
-        // 获取参数
         Long appId = aiGenerateQuestionRequest.getAppId();
         int questionNumber = aiGenerateQuestionRequest.getQuestionNumber();
         int optionNumber = aiGenerateQuestionRequest.getOptionNumber();
-        // 获取应用信息
         App app = appService.getById(appId);
         ThrowUtils.throwIf(app == null, ErrorCode.NOT_FOUND_ERROR);
-        // 封装 Prompt
         String userMessage = getGenerateQuestionUserMessage(app, questionNumber, optionNumber);
-        // AI 生成
-        String result = aiManager.doSyncRequest(GENERATE_QUESTION_SYSTEM_MESSAGE, userMessage, null);
-        // 截取需要的 JSON 信息
+        // 使用带重试逻辑的同步请求方法
+        String result = doSyncRequestWithRetry(GENERATE_QUESTION_SYSTEM_MESSAGE, userMessage, null);
         int start = result.indexOf("[");
         int end = result.lastIndexOf("]");
         String json = result.substring(start, end + 1);
@@ -324,34 +370,25 @@ public class QuestionController {
         return ResultUtils.success(questionContentDTOList);
     }
 
+
     @GetMapping("/ai_generate/sse")
     public SseEmitter aiGenerateQuestionSSE(AiGenerateQuestionRequest aiGenerateQuestionRequest, HttpServletRequest request) {
         ThrowUtils.throwIf(aiGenerateQuestionRequest == null, ErrorCode.PARAMS_ERROR);
-        // 获取参数
         Long appId = aiGenerateQuestionRequest.getAppId();
         int questionNumber = aiGenerateQuestionRequest.getQuestionNumber();
         int optionNumber = aiGenerateQuestionRequest.getOptionNumber();
-        // 获取应用信息
         App app = appService.getById(appId);
         ThrowUtils.throwIf(app == null, ErrorCode.NOT_FOUND_ERROR);
-        // 封装 Prompt
         String userMessage = getGenerateQuestionUserMessage(app, questionNumber, optionNumber);
-        // 建立 SSE 连接对象，0 表示永不超时
         SseEmitter sseEmitter = new SseEmitter(0L);
-        // AI 生成，SSE 流式返回
-        Flowable<ModelData> modelDataFlowable = aiManager.doStreamRequest(GENERATE_QUESTION_SYSTEM_MESSAGE, userMessage, null);
-        // 左括号计数器，除了默认值外，当回归为 0 时，表示左括号等于右括号，可以截取
+        // 使用带重试逻辑的流式请求方法
+        Flowable<ModelData> modelDataFlowable = aiManager.doStreamRequestWithRetry(GENERATE_QUESTION_SYSTEM_MESSAGE, userMessage, null);
         AtomicInteger counter = new AtomicInteger(0);
-        // 拼接完整题目
         StringBuilder stringBuilder = new StringBuilder();
-
-        // 获取登录用户
-        User loginUser = userService.getLoginUser(request);
-        // 默认全局线程池
         Scheduler scheduler = Schedulers.io();
-        if ("vip".equals(loginUser.getUserRole())) {
-            scheduler = vipScheduler;
-        }
+//        if ("vip".equals(loginUser.getUserRole())) {
+//            scheduler = vipScheduler;
+//        }
         modelDataFlowable
                 .observeOn(scheduler)
                 .map(modelData -> modelData.getChoices().get(0).getDelta().getContent())
@@ -365,7 +402,6 @@ public class QuestionController {
                     return Flowable.fromIterable(characterList);
                 })
                 .doOnNext(c -> {
-                    // 如果是 '{'，计数器 + 1
                     if (c == '{') {
                         counter.addAndGet(1);
                     }
@@ -375,9 +411,7 @@ public class QuestionController {
                     if (c == '}') {
                         counter.addAndGet(-1);
                         if (counter.get() == 0) {
-                            // 可以拼接题目，并且通过 SSE 返回给前端
                             sseEmitter.send(JSONUtil.toJsonStr(stringBuilder.toString()));
-                            // 重置，准备拼接下一道题
                             stringBuilder.setLength(0);
                         }
                     }
@@ -387,6 +421,8 @@ public class QuestionController {
                 .subscribe();
         return sseEmitter;
     }
+
+
 
     // 仅测试隔离线程池使用
     @Deprecated
@@ -460,20 +496,3 @@ public class QuestionController {
 
     // endregion
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

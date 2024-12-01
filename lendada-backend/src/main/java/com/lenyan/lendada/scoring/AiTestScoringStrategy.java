@@ -16,6 +16,7 @@ import com.lenyan.lendada.model.vo.QuestionVO;
 import com.lenyan.lendada.service.QuestionService;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
+import org.springframework.data.redis.core.StringRedisTemplate;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
@@ -38,6 +39,9 @@ public class AiTestScoringStrategy implements ScoringStrategy {
 
     @Resource
     private RedissonClient redissonClient;
+
+    @Resource
+    private StringRedisTemplate stringRedisTemplate;
 
     // 分布式锁的 key
     private static final String AI_ANSWER_LOCK = "AI_ANSWER_LOCK";
@@ -86,6 +90,18 @@ public class AiTestScoringStrategy implements ScoringStrategy {
             return userAnswer;
         }
 
+        answerJson = stringRedisTemplate.opsForValue().get(cacheKey);
+        if (StrUtil.isNotBlank(answerJson)) {
+            // 构造返回值，填充答案对象的属性
+            UserAnswer userAnswer = JSONUtil.toBean(answerJson, UserAnswer.class);
+            userAnswer.setAppId(appId);
+            userAnswer.setAppType(app.getAppType());
+            userAnswer.setScoringStrategy(app.getScoringStrategy());
+            userAnswer.setChoices(jsonStr);
+            return userAnswer;
+        }
+
+
         // 定义锁
         RLock lock = redissonClient.getLock(AI_ANSWER_LOCK + cacheKey);
         try {
@@ -107,7 +123,8 @@ public class AiTestScoringStrategy implements ScoringStrategy {
             // 封装 Prompt
             String userMessage = getAiTestScoringUserMessage(app, questionContent, choices);
             // AI 生成
-            String result = aiManager.doSyncStableRequest(AI_TEST_SCORING_SYSTEM_MESSAGE, userMessage);
+            //String result = aiManager.doSyncStableRequest(AI_TEST_SCORING_SYSTEM_MESSAGE, userMessage);
+            String result = aiManager.doSyncRequestWithRetry(AI_TEST_SCORING_SYSTEM_MESSAGE, userMessage);
             // 截取需要的 JSON 信息
             int start = result.indexOf("{");
             int end = result.lastIndexOf("}");
@@ -115,6 +132,8 @@ public class AiTestScoringStrategy implements ScoringStrategy {
 
             // 缓存结果
             answerCacheMap.put(cacheKey, json);
+
+            stringRedisTemplate.opsForValue().set(cacheKey, json, 5, TimeUnit.MINUTES);
 
             // 3. 构造返回值，填充答案对象的属性
             UserAnswer userAnswer = JSONUtil.toBean(json, UserAnswer.class);
