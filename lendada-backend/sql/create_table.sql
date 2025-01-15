@@ -96,3 +96,45 @@ create table if not exists user_answer
     index idx_appId (appId),
     index idx_userId (userId)
 ) comment '用户答题记录' collate = utf8mb4_unicode_ci;
+
+DROP TABLE IF EXISTS `user_answer_0`;
+CREATE TABLE `user_answer_0`  (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `appId` bigint NOT NULL COMMENT '应用 id',
+  `appType` tinyint NOT NULL DEFAULT 0 COMMENT '应用类型（0-得分类，1-角色测评类）',
+  `scoringStrategy` tinyint NOT NULL DEFAULT 0 COMMENT '评分策略（0-自定义，1-AI）',
+  `choices` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL COMMENT '用户答案（JSON 数组）',
+  `resultId` bigint NULL DEFAULT NULL COMMENT '评分结果 id',
+  `resultName` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '结果名称，如物流师',
+  `resultDesc` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL COMMENT '结果描述',
+  `resultPicture` varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '结果图标',
+  `resultScore` int NULL DEFAULT NULL COMMENT '得分',
+  `userId` bigint NOT NULL COMMENT '用户 id',
+  `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `isDelete` tinyint NOT NULL DEFAULT 0 COMMENT '是否删除',
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `idx_appId`(`appId` ASC) USING BTREE,
+  INDEX `idx_userId`(`userId` ASC) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1817053173802668033 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '用户答题记录分表 0' ROW_FORMAT = DYNAMIC;
+
+DROP TABLE IF EXISTS `user_answer_1`;
+CREATE TABLE `user_answer_1`  (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `appId` bigint NOT NULL COMMENT '应用 id',
+  `appType` tinyint NOT NULL DEFAULT 0 COMMENT '应用类型（0-得分类，1-角色测评类）',
+  `scoringStrategy` tinyint NOT NULL DEFAULT 0 COMMENT '评分策略（0-自定义，1-AI）',
+  `choices` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL COMMENT '用户答案（JSON 数组）',
+  `resultId` bigint NULL DEFAULT NULL COMMENT '评分结果 id',
+  `resultName` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '结果名称，如物流师',
+  `resultDesc` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL COMMENT '结果描述',
+  `resultPicture` varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL COMMENT '结果图标',
+  `resultScore` int NULL DEFAULT NULL COMMENT '得分',
+  `userId` bigint NOT NULL COMMENT '用户 id',
+  `createTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updateTime` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  `isDelete` tinyint NOT NULL DEFAULT 0 COMMENT '是否删除',
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `idx_appId`(`appId` ASC) USING BTREE,
+  INDEX `idx_userId`(`userId` ASC) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1823726708240560129 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci COMMENT = '用户答题记录分表 1' ROW_FORMAT = DYNAMIC;
