@@ -86,7 +86,12 @@ mybatis-plus:
       logic-not-delete-value: 0 # 逻辑未删除值（默认为 0）
 # 对象存储
 # todo 需替换配置
-
+cos:
+  client:
+    accessKey: 
+    secretKey: 
+    region: 
+    bucket:
 # 接口文档配置
 knife4j:
   enable: true
