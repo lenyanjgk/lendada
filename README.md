@@ -80,3 +80,7 @@
 - **前端技术**：Vue 3、Vue CLI、Axios、TypeScript、Arco Design、Pinia、QRCode.js等。
 - **后端技术**：Spring Boot、MySQL、Redis、MyBatis Plus、分布式锁、响应式框架等。
 - **辅助工具**：JetBrains系列IDE、Taro跨端框架、CodeGeeX智能编程助手。
+
+## 联系方式
+
+付费远程运行/安装/解决bug 联系qq: 3482565966
